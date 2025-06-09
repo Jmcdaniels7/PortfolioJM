@@ -1,0 +1,33 @@
+.logo-ticker-container {
+  overflow: hidden;
+  background-color: #1a1a1a;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.logo-ticker-content {
+  display: flex;
+  gap: 32px;
+  white-space: nowrap;
+  animation: logo-ticker 25s linear infinite;
+}
+
+.logo-ticker-container:hover .logo-ticker-content {
+  animation-play-state: paused;
+}
+
+.logo-ticker-img {
+  height: 20px;   /* Adjust logo size here */
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes logo-ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
