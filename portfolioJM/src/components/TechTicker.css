@@ -1,8 +1,14 @@
 .logo-ticker-container {
   overflow: hidden;
   background-color: #1a1a1a;
-  padding: 10px 0;
-  width: 100%;
+  width: 1375px;
+  height: 50px;
+}
+
+body
+{
+  margin-top: -200px;
+  padding: 0;
 }
 
 .logo-ticker-content {
@@ -17,8 +23,8 @@
 }
 
 .logo-ticker-img {
-  height: 20px;   /* Adjust logo size here */
-  width: auto;
+  height: 40px;   /* Adjust logo size here */
+  width: 40px;
   object-fit: contain;
 }
 

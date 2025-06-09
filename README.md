@@ -1,1 +1,2 @@
 # PorftfolioJM
+Ongoing Project of my Portfolio of projects. Utilizing React and upskilling with the next.js framework. Possibly adding Django Framework later and develop a REST API for feedback on my portfolio.
