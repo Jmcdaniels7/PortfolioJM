@@ -1,0 +1,41 @@
+.logo-ticker-container {
+  overflow: hidden;
+  box-shadow: inset 5px 5px 10px 0px rgba(255, 255, 255, 0.5); 
+  background-color: #1a1a1a;
+  width: 1360px;
+  height: 70px;
+}
+
+body
+{
+  margin-top: -550px;
+  padding: 0;
+}
+
+.logo-ticker-content {
+  display: flex;
+  margin-top: 20px;
+  gap: 32px;
+  white-space: nowrap;
+  animation: logo-ticker 25s linear infinite;
+}
+
+.logo-ticker-container:hover .logo-ticker-content {
+  animation-play-state: paused;
+}
+
+.logo-ticker-img {
+  height: 40px;   /* Adjust logo size here */
+  width: 40px;
+  object-fit: contain;
+}
+
+@keyframes logo-ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+

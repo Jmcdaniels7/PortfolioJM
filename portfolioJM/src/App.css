@@ -1,18 +1,62 @@
-/*tech ticker css*/
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
+body {
+  /*<a href="https://www.freepik.com/free-ai-image/ultra-detailed-nebula-abstract-wallpaper-4_39994508.htm">
+  Image by Vaynakh on Freepik</a>*/
+  background-image: url('./assets/images/Nebula.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1400px;
+
+}
+
+.wrapper
+{
+  background-color: rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 0px;
+  height: 100px;
+}
+
+.welcome-container{
+  text-align: center;
+  font-family: 'Bubblegum Sans';
+  font-size: 35px;
+  color: #afaf84;
+  margin-top: 50px;
+  transform: translateY(50px); /*moves on y axis*/
+}
+
+.welcome-container span {
+  display: inline-block; /* Essential for applying transformations */
+  animation: wave-animation 1s infinite ease-in-out; /* Adjust timing and easing*/
+  margin-right: 5px; 
+}
+
+@keyframes wave-animation {
+  0%, 100% {
+    transform: translateY(0);
   }
-  100% {
-    transform: translateX(-100%);
+  50% {
+    transform: translateY(-20px); /* Adjust the vertical movement */
   }
 }
 
-.animate-marquee {
-  animation: marquee 20s linear infinite;
+.welcome-container span:nth-child(1) {
+  animation-delay: 0s;
 }
 
-.img {
-  width: 5px;
-  height: 20px;
+.welcome-container span:nth-child(2) {
+  animation-delay: 0.1s; /* Adjust the delay between characters */
+}
+
+.welcome-container span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.welcome-container span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.welcome-container span:nth-child(5) {
+  animation-delay: 0.4s;
 }
