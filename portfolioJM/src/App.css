@@ -22,7 +22,7 @@ body {
   font-family: 'Bubblegum Sans';
   font-size: 35px;
   color: #afaf84;
-  margin-top: 50px;
+  margin-top: 250px;
   transform: translateY(50px); /*moves on y axis*/
 }
 
@@ -59,4 +59,13 @@ body {
 
 .welcome-container span:nth-child(5) {
   animation-delay: 0.4s;
+}
+
+.root-bio {
+  background-color: rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 25px;
+  height: 400px;
+
 }

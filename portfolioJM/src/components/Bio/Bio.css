@@ -1,4 +1,53 @@
+h4 {
+    line-height: 0.5; /*removing large line breaks caused by h4 tag*/
+}
 
+h2 {
+    line-height: 1.5;
+}
+
+.photo-container {
+    transform: translateX(50px) translateY(25px); 
+    opacity: 0;
+    transform: translateX(-500px);
+    animation: slideInLeft 4.5s ease-out forwards;
+    margin-left: 25px;
+}
+
+.bio-content {
+    position: absolute;  /* Make it positionable on the screen */
+    right: 5rem;     /* Distance from the right edge */
+    top: 25%;  /* position from top or on x axis*/     
+    color: #afaf84;
+    opacity: 0;
+    animation: slideInRight 4.5s ease-out forwards;
+    transform: translateX(500px); /* orgin of where the movement comes from */
+    line-height: 0;
+    
+}
+
+.linked-in {
+    transform: translateX(75px) translateY(-25px);
+}
+
+.skills {
+     transform: translateY(-15px);
+
+}
+
+@keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
+
+@keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+}
 
 
 

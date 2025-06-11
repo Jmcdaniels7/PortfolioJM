@@ -1,19 +1,44 @@
 import React from "react";
 import "./Bio.css";
 import MyPhoto from "../../assets/images/photoOne.jpg";
+import Githubphoto from "../../assets/images/Github.png";
+import linked from "../../assets/images/linkedIn.png";
 
 
 const Bio = () => {
     return (
         <div class="bio-container">
-            <div class="wrapper"> 
-
-                <div class="photo-container">
-                    <img src={MyPhoto} alt="My image"width="275" height="180"></img>
-                </div>
-
-            </div>
             
+            <div class="photo-container">
+                <img src={MyPhoto} alt="My image"width="425" height="300"></img>
+            </div>
+
+            <div class ="bio-content">
+                
+                <h2>Full Stack Developer and Student <br></br> Specializing in Back-end Development <br></br>
+                Indianapolis, Indiana</h2>
+
+                <a href="https://github.com/Jmcdaniels7/ProjectsJM.git">
+                    <img src={Githubphoto} alt="GitHub"width="60" height="30"></img>
+                </a>
+
+                <div class="linked-in">
+                    <a href="https://www.linkedin.com/in/jacob-mcdaniels-6b31322ab/">
+                        <img src={linked} alt="GitHub"width="75" height="20"></img>
+                    </a>
+
+                </div>
+                
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <h4>Languages: Python, Java, C++, SQL, TypeScript, JavaScript, HTML5, CSS</h4>
+                    <h4>Frameworks/Libraries: Django, Flask, Node.js, React, Angular, Spring Boot, Javalin, pandas</h4>
+                    <h4>Databases: PostgreSQL, SQLite, CosmosDB, Oracle</h4>
+                    <h4>Tools: Microsoft Azure, Postman, Docker, Anaconda, GitHub Copilot</h4>
+                </div>
+                
+                
+            </div>
         </div>
 
     )

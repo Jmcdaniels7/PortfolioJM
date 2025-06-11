@@ -52,7 +52,7 @@ const App = () => {
           </div>
       </header>
         
-        <div>
+        <div class="root-bio">
           <Bio />
 
         </div>
