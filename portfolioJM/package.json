@@ -2,7 +2,7 @@
   "name": "portfoliojm",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://gitname.github.io/portfolioJM",
+  "homepage": "https://jmcdaniels7.github.io/PortfolioJM",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
