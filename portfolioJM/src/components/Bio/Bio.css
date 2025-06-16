@@ -6,34 +6,47 @@ h2 {
     line-height: 1.5;
 }
 
+.bio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  position: relative;
+  padding: 1rem;
+  color: #afaf84;
+}
+
 .photo-container {
-    transform: translateX(50px) translateY(25px); 
-    opacity: 0;
-    transform: translateX(-500px);
-    animation: slideInLeft 4.5s ease-out forwards;
-    margin-left: 25px;
+  flex: 0 0 425px;  /* fixed width */
+  height: 300px;
+  opacity: 0;
+  animation: slideInLeft 4.5s ease-out forwards;
+  transform: translateX(-500px);
+  margin-left: 0;
 }
 
 .bio-content {
-    position: absolute;  /* Make it positionable on the screen */
-    right: 5rem;     /* Distance from the right edge */
-    top: 25%;  /* position from top or on x axis*/     
-    color: #afaf84;
-    opacity: 0;
-    animation: slideInRight 4.5s ease-out forwards;
-    transform: translateX(500px); /* orgin of where the movement comes from */
-    line-height: 0;
-    
+  flex: 1 1 auto;  /* flexible */
+  opacity: 0;
+  animation: slideInRight 4.5s ease-out forwards;
+  transform: translateX(500px);
+  line-height: 1.5;
+  position: static;
+  
 }
 
-.linked-in {
-    transform: translateX(75px) translateY(-25px);
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between icons */
+  margin: 1rem 0;
 }
 
 .skills {
-     transform: translateY(-15px);
-
+  margin-top: -15px;
 }
+
 
 @keyframes slideInRight {
       to {

@@ -1,36 +1,100 @@
+
+html, body {
+  height: 200%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   /*<a href="https://www.freepik.com/free-ai-image/ultra-detailed-nebula-abstract-wallpaper-4_39994508.htm">
   Image by Vaynakh on Freepik</a>*/
   background-image: url('./assets/images/Nebula.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 1400px;
-
+  background-position: center center;
+  background-attachment: fixed; /* optional */
+  min-height: 100vh;  /* extra safety */
 }
 
-.wrapper
-{
-  background-color: rgba(0, 0, 0, 0.5); 
+.page-container {
+  min-height: 100vh;
+  position: absolute;
+  top: -175px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px; /* optional max width */
+  margin: 0 auto;    /* center horizontally */
+}
+
+
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-top: 0px;
-  height: 100px;
+  
+  width: 100vw;           /* full viewport width */
+  max-width: 100vw;       /* ensure max width matches viewport */
+  padding:  2rem;   /* horizontal padding to keep content from touching edges */
+  box-sizing: border-box; /* include padding in width calculation */
+  
+  margin: 0;              /* no auto margin since full width */
+  height: auto;           /* height adjusts to content */
 }
 
-.welcome-container{
+
+
+.root-bio {
+
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 220%;
+  height: 150%;
+  padding: 1.5rem;
+
+}
+
+.welcome-container {
   text-align: center;
   font-family: 'Bubblegum Sans';
   font-size: 35px;
   color: #afaf84;
-  margin-top: 250px;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
   transform: translateY(50px); /*moves on y axis*/
 }
+
 
 .welcome-container span {
   display: inline-block; /* Essential for applying transformations */
   animation: wave-animation 1s infinite ease-in-out; /* Adjust timing and easing*/
   margin-right: 5px; 
 }
+
+.root-tech-ticker {
+  width: 100vw;               /* full viewport width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+
+
+.project-search {
+  width: 80%;
+  max-width: 800px;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+}
+
 
 @keyframes wave-animation {
   0%, 100% {
@@ -59,13 +123,4 @@ body {
 
 .welcome-container span:nth-child(5) {
   animation-delay: 0.4s;
-}
-
-.root-bio {
-  background-color: rgba(0, 0, 0, 0.5); 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin-top: 25px;
-  height: 400px;
-
 }

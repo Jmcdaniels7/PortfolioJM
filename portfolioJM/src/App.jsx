@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 import TechTicker from "./components/TechTicker/TechTicker";
 import Bio from "./components/Bio/Bio";
+import ProjectSearch from "./components/ProjectSearch/ProjectSearch"; // Make sure this import exists
 
 const logos = [
   "https://raw.githubusercontent.com/github/explore/main/topics/python/python.png",
@@ -20,47 +19,38 @@ const logos = [
   "https://raw.githubusercontent.com/github/explore/main/topics/nextjs/nextjs.png",
   "https://raw.githubusercontent.com/github/explore/main/topics/azure/azure.png",
   "https://raw.githubusercontent.com/github/explore/main/topics/docker/docker.png",
-  /*https://raw.githubusercontent.com/github/explore/main/topics/flask/flask.png*/
-  
-  
 ];
 
 const App = () => {
   return (
-    <html>
-      <head>
-        <link href='https://fonts.googleapis.com/css?family=Bubblegum Sans' rel='stylesheet'></link>
-      </head>
-      <body>
-        <header>
-          <div>
+    <div className="page-container">
 
-            <div class="wrapper">
-
-              <div class="welcome-container">
-                <span>Welcome</span>
-                <span>to</span>
-                <span>Jacob</span> 
-                <span>McDaniels</span>
-                <span>Portfolio!</span>
-              </div>
-
-            </div>
-    
-            <TechTicker logos={logos} />
-
+      <header>
+        <div className="wrapper">
+          <div className="welcome-container">
+            <span>Welcome</span>
+            <span>to</span>
+            <span>Jacob</span> 
+            <span>McDaniels</span>
+            <span>Portfolio!</span>
           </div>
-      </header>
-        
-        <div class="root-bio">
-          <Bio />
-
         </div>
         
-      </body>
+        <div className="root-tech-ticker">
+          <TechTicker logos={logos} />
+        </div>
+        
+      </header>
 
-    </html>
+      <div className="root-bio">
+        <Bio />
+      </div>
+
+      <div className="root-project-search">
+        <ProjectSearch />
+      </div>
+    </div>
   )
 }
 
-export default App
+export default App;

@@ -7,29 +7,29 @@ import linked from "../../assets/images/linkedIn.png";
 
 const Bio = () => {
     return (
-        <div class="bio-container">
+        <div className="bio-container">
             
-            <div class="photo-container">
-                <img src={MyPhoto} alt="My image"width="425" height="300"></img>
+            <div className="photo-container">
+                <img src={MyPhoto} alt="My image"width="475" height="350"></img>
             </div>
 
-            <div class ="bio-content">
+            <div className="bio-content">
                 
                 <h2>Full Stack Developer and Student <br></br> Specializing in Back-end Development <br></br>
                 Indianapolis, Indiana</h2>
 
-                <a href="https://github.com/Jmcdaniels7/ProjectsJM.git">
-                    <img src={Githubphoto} alt="GitHub"width="60" height="30"></img>
-                </a>
-
-                <div class="linked-in">
+                <div className="social-links">
+                    <a href="https://github.com/Jmcdaniels7/ProjectsJM.git">
+                        <img src={Githubphoto} alt="GitHub"width="60" height="25"></img>
+                    </a>
+                
                     <a href="https://www.linkedin.com/in/jacob-mcdaniels-6b31322ab/">
                         <img src={linked} alt="GitHub"width="75" height="20"></img>
                     </a>
 
                 </div>
                 
-                <div class="skills">
+                <div className="skills">
                     <h2>Skills</h2>
                     <h4>Languages: Python, Java, C++, SQL, TypeScript, JavaScript, HTML5, CSS</h4>
                     <h4>Frameworks/Libraries: Django, Flask, Node.js, React, Angular, Spring Boot, Javalin, pandas</h4>
