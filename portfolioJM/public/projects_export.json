@@ -1,0 +1,99 @@
+{
+    "projects": [
+        {"project_id":13,
+        "project_framework":"Django",
+        "project_name":"Job Blog 2.0",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM.git"},
+
+        {"project_id":14,
+        "project_framework":"Django",
+        "project_name":"Job Blog 1.0",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/Django/Job%20Blog%20Project"},
+
+        {"project_id":16,
+        "project_framework":"Flask",
+        "project_name":"Stock Trading Simulator",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/Flask"},
+
+        {"project_id":15, 
+        "project_framework":"React",
+        "project_name":"Portfolio Site",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/ReactandSpringBoot/portfolio"},
+
+        {"project_id":17,
+        "project_framework":"Django",
+        "project_name":"Twisted Tooth Fairy",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/Django/Twisted%20Tooth%20Fairy"},
+
+        {"project_id":18,
+        "project_framework":"None",
+        "project_name":"Weavers Solitaire",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/C%2B%2B/Weavers%20Solitaire%20Project%20DS/csci202-module-8-final-project-Jmcdaniels7-main"},
+
+        {"project_id":19,
+        "project_framework":"None",
+        "project_name":"Warrior Game",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/C%2B%2B/%20Warrior%20Game%20Project"},
+
+        {"project_id":20,
+        "project_framework":"None",
+        "project_name":"Messi Joes Restraunt POS",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/C%2B%2B/Restraunt%20POS%20Project"},
+
+        {"project_id":21,
+        "project_framework":"None",
+        "project_name":"Hogwarts Shop DB",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/C%2B%2B/Hogwarts%20DataBase%20Design/DatabaseDesignC%2B%2B/sp25-m08-final-project-Jmcdaniels7-main"},
+        
+        {"project_id":22,
+        "project_framework":"Bootstrap",
+        "project_name":"Resume/About me 2023",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/tree/main/First%20Projects/Resume%20Page%20Project"},
+        
+        {"project_id":23,
+        "project_framework":"None",
+        "project_name":"Jiu Jitsu Webpage 2021",
+        "projecturl":"https://github.com/Jmcdaniels7/ProjectsJM/blob/main/First%20Projects/JiuJitsu%20Computer%20science%20website.txt"}
+
+    ],
+
+    "projectLanguages": [
+        {"project_project_id":13,"project_languages":"Python"},
+        {"project_project_id":13,"project_languages":"SQL"},
+        {"project_project_id":13,"project_languages":"JavaScript"},
+        {"project_project_id":13,"project_languages":"HTML"},
+        {"project_project_id":13,"project_languages":"CSS"},
+        {"project_project_id":14,"project_languages":"Python"},
+        {"project_project_id":14,"project_languages":"HTML"},
+        {"project_project_id":14,"project_languages":"CSS"},
+        {"project_project_id":15,"project_languages":"JavaScript"},
+        {"project_project_id":15,"project_languages":"CSS"},
+        {"project_project_id":15,"project_languages":"HTML"},
+        {"project_project_id":16,"project_languages":"Python"},
+        {"project_project_id":16,"project_languages":"SQL"},
+        {"project_project_id":16,"project_languages":"HTML"},
+        {"project_project_id":16,"project_languages":"CSS"},
+        {"project_project_id":15,"project_languages":"Java"},
+        {"project_project_id":15,"project_languages":"SQL"},
+        {"project_project_id":17,"project_languages":"Python"},
+        {"project_project_id":17,"project_languages":"CSS"},
+        {"project_project_id":17,"project_languages":"HTML"},
+        {"project_project_id":17,"project_languages":"JavaScript"},
+        {"project_project_id":18,"project_languages":"C++"},
+        {"project_project_id":19,"project_languages":"C++"},
+        {"project_project_id":20,"project_languages":"C++"},
+        {"project_project_id":21,"project_languages":"C++"},
+        {"project_project_id":21,"project_languages":"SQL"},
+        {"project_project_id":22,"project_languages":"HTML"},
+        {"project_project_id":22,"project_languages":"CSS"},
+        {"project_project_id":22,"project_languages":"JavaScript"},
+        {"project_project_id":23,"project_languages":"HTML"},
+        {"project_project_id":23,"project_languages":"CSS"}
+
+    ]
+
+
+}
+
+
+

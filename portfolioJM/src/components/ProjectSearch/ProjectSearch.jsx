@@ -1,58 +1,78 @@
-import { useState } from 'react';
-import './ProjectSearch.css'; 
+import React, { useEffect, useState } from 'react';
+import './ProjectSearch.css';
 
-function ProjectSearch() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [projects, setProjects] = useState([]);
+const ProjectSearch = () => {
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState('');
+  const [filtered, setFiltered] = useState([]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchTerm.trim() === '') return;
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}projects_export.json`)
+      .then((response) => response.json())
+      .then((json) => setData(json.projects))
+      .catch((error) => console.error("Failed to load JSON:", error));
+  }, []);
 
-    fetch(`http://localhost:8080/api/search?search=${encodeURIComponent(searchTerm)}`)
-    .then(res => {
-      if (!res.ok) throw new Error('Failed to fetch');
-      return res.json();
-    })
-    .then(data => setProjects(data))
-    .catch(err => console.error('Fetch error:', err));
+  const handleSearch = () => {
+    const lower = search.toLowerCase();
+    const result = data.filter((project) =>
+      project.project_name.toLowerCase().includes(lower) ||
+      project.project_framework.toLowerCase().includes(lower)
+    );
+    setFiltered(result);
   };
 
   return (
-    <div className="project-search-container">
-      <h2 className="search-heading">Search Projects</h2>
+    <div className="p-6">
+  <div className="search-container">
+    <h1 className="search-header">Search Projects</h1>
 
-      <form onSubmit={handleSearch} className="search-form">
+    <div className="search-form">
+      <div className="search-input-wrapper">
         <input
           type="text"
-          placeholder="Search by framework or language..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
+          placeholder="Search by name or framework"
           className="search-input"
         />
-        <button type="submit" className="search-button">Search</button>
-      </form>
-
-      <div className="project-grid">
-        {projects.map((proj, index) => (
-          <div className="project-card" key={index}>
-            <h3>{proj.projectName}</h3>
-            <p><strong>Framework:</strong> {proj.projectFramework}</p>
-            <p><strong>Languages:</strong> {proj.projectLanguages.join(', ')}</p>
-            <a
-              href={proj.projectURL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link"
-            >
-              View Project
-            </a>
-          </div>
-        ))}
       </div>
+
+      <button
+        onClick={handleSearch}
+        className="search-button"
+      >
+        Search
+      </button>
     </div>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {filtered.map((project) => (
+      <div
+        key={project.project_id}
+        className="project-card"
+      >
+        <h2 className="text-lg font-semibold mb-1">{project.project_name}</h2>
+        <p className="text-sm text-gray-700 mb-2">Framework: {project.project_framework}</p>
+        <a
+          href={project.projecturl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          View Project
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
+
   );
-}
+};
 
 export default ProjectSearch;
+
+
 
