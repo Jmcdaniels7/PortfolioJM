@@ -67,9 +67,11 @@ const ProjectSearch = () => {
               href={project.projectUrl}
               target="_blank"
               rel="noopener noreferrer"
+              className="project-link"
             >
               View Project
             </a>
+
             
           </div>
         ))}
