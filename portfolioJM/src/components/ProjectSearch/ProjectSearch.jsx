@@ -29,7 +29,7 @@ const ProjectSearch = () => {
   return (
   <div className="project-search-container">
     <div className="search-container">
-      <h1 className="search-header">🔍 Project Search</h1>
+      <h1 className="search-header">Project Search</h1>
 
       <div className="search-form">
         <input
@@ -62,15 +62,15 @@ const ProjectSearch = () => {
                 ? project.projectLanguages.join(', ')
                 : project.projectLanguages || 'Unknown'}
             </p>
-            {project.projectUrl && (
-              <a
-                href={project.projectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View Project
-              </a>
-            )}
+            
+            <a
+              href={project.projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Project
+            </a>
+            
           </div>
         ))}
       </div>
