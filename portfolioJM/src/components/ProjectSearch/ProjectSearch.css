@@ -83,7 +83,7 @@
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: #f8f8f8;
-  cursor: pointer;
+  cursor: default;
   border-top: 5px solid #f9d342; /* folder tab illusion */
 }
 
@@ -123,20 +123,18 @@
 }
 
 .project-link {
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: rgba(78, 205, 196, 0.15);
-  border-radius: 5px;
-  cursor: pointer;
-  color: #4ecdc4;           /* Make link text visible and styled */
+  color: #4ecdc4;
   text-decoration: none;
-  font-weight: 600;
-  user-select: text;        /* Optional: allow text selection */
+  font-weight: bold;
+  cursor: pointer;
+  pointer-events: auto; /* explicitly allow clicks */
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 .project-link:hover {
-  background-color: rgba(78, 205, 196, 0.3);
   text-decoration: underline;
 }
+
 
 

@@ -68,10 +68,10 @@ const ProjectSearch = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
+              onClick={e => e.stopPropagation()}
             >
               View Project
             </a>
-
             
           </div>
         ))}
