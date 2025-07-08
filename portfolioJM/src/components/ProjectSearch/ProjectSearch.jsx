@@ -55,27 +55,43 @@ const ProjectSearch = () => {
 
       {filtered.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {filtered.map((project) => (
-            <div key={project.projectId} className="project-card">
-              <h2 className="text-lg font-semibold mb-1">{project.projectName || 'Unnamed Project'}</h2>
-              <p className="text-sm text-gray-700 mb-2">
-                Framework: {project.projectFramework || 'Unknown'}
-              </p>
-              <p className="text-sm text-gray-700 mb-2">
-                Languages: {Array.isArray(project.projectLanguages) ? project.projectLanguages.join(', ') : (project.projectLanguages || 'Unknown')}
-              </p>
-              <a
-                  href={project.projectURL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline hover:text-blue-800"
-              >
-                View Project
-              </a>
-              
-            </div>
-          ))}
-        </div>
+  {filtered.map((project) => (
+    <div
+      key={project.projectId}
+      className="bg-yellow-100 border-2 border-yellow-400 rounded-xl shadow-md p-4 hover:scale-105 transition-transform duration-200"
+    >
+      <div>
+        <h2 className="text-xl font-bold text-yellow-900 mb-2">
+          📁 {project.projectName || 'Unnamed Project'}
+        </h2>
+
+        <p className="text-sm text-yellow-800 mb-1">
+          <span className="font-semibold">Framework:</span>{' '}
+          {project.projectFramework || 'Unknown'}
+        </p>
+
+        <p className="text-sm text-yellow-800 mb-3">
+          <span className="font-semibold">Languages:</span>{' '}
+          {Array.isArray(project.projectLanguages)
+            ? project.projectLanguages.join(', ')
+            : project.projectLanguages || 'Unknown'}
+        </p>
+      </div>
+
+      {project.projectURL && (
+        <a
+          href={project.projectURL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-700 hover:underline font-semibold"
+        >
+          Open Project ↗
+        </a>
+      )}
+    </div>
+  ))}
+</div>
+
       )}
     </div>
     </div>
