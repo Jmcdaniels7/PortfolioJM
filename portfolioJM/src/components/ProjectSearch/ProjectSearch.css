@@ -83,6 +83,7 @@
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   color: #f8f8f8;
+  cursor: pointer;
   border-top: 5px solid #f9d342; /* folder tab illusion */
 }
 
@@ -127,6 +128,7 @@
   color: #4ecdc4;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .project-link:hover {
