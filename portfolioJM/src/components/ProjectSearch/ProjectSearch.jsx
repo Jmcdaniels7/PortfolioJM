@@ -27,23 +27,27 @@ const ProjectSearch = () => {
   };
 
   return (
-    <div className="p-6 font-sans">
-      <div className="search-container max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">🔍 Project Search</h1>
+    <div className="p-8 font-sans bg-gray-50 min-h-screen">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-extrabold text-gray-800 mb-8 text-center">
+          🔍 Project Search
+        </h1>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            onKeyDown={(e) => { if (e.key === 'Enter') handleSearch(); }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleSearch();
+            }}
             placeholder="Search by name or framework"
-            className="w-full sm:w-2/3 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full sm:w-2/3 px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
           <button
             onClick={handleSearch}
-            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
           >
             Search
           </button>
@@ -52,23 +56,29 @@ const ProjectSearch = () => {
         {error && <p className="text-red-600 text-center">{error}</p>}
 
         {filtered.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {filtered.map((project) => (
               <div
                 key={project.projectId}
-                className="bg-white border border-gray-200 shadow-lg rounded-2xl p-6 transition hover:shadow-2xl hover:scale-[1.02]"
+                className="bg-yellow-100 border border-yellow-300 rounded-t-3xl rounded-b-xl shadow-md p-6 relative group hover:shadow-xl transition duration-300"
               >
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                  {project.projectName || 'Unnamed Project'}
-                </h2>
+                {/* Folder Tab */}
+                <div className="absolute top-0 left-0 w-20 h-6 bg-yellow-300 rounded-br-lg rounded-tl-3xl"></div>
 
-                <p className="text-sm text-gray-700 mb-1">
-                  <span className="font-medium">Framework:</span>{' '}
+                <div className="flex items-center mb-4">
+                  <div className="text-3xl mr-3">📁</div>
+                  <h2 className="text-xl font-bold text-gray-900">
+                    {project.projectName || 'Unnamed Project'}
+                  </h2>
+                </div>
+
+                <p className="text-sm text-gray-800 mb-2">
+                  <span className="font-semibold">Framework:</span>{' '}
                   {project.projectFramework || 'Unknown'}
                 </p>
 
-                <p className="text-sm text-gray-700 mb-3">
-                  <span className="font-medium">Languages:</span>{' '}
+                <p className="text-sm text-gray-800 mb-4">
+                  <span className="font-semibold">Languages:</span>{' '}
                   {Array.isArray(project.projectLanguages)
                     ? project.projectLanguages.join(', ')
                     : project.projectLanguages || 'Unknown'}
@@ -94,3 +104,4 @@ const ProjectSearch = () => {
 };
 
 export default ProjectSearch;
+
