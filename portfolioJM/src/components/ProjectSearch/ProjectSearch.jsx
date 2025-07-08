@@ -54,14 +54,14 @@ const ProjectSearch = () => {
       {filtered.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {filtered.map((project) => (
-            <div key={project.project_id} className="project-card">
-              <h2 className="text-lg font-semibold mb-1">{project.project_name || 'Unnamed Project'}</h2>
+            <div key={project.projectId} className="project-card">
+              <h2 className="text-lg font-semibold mb-1">{project.projectName || 'Unnamed Project'}</h2>
               <p className="text-sm text-gray-700 mb-2">
-                Framework: {project.project_framework || 'Unknown'}
+                Framework: {project.projectFramework || 'Unknown'}
               </p>
-              {project.project_url && (
+              {project.projectUrl && (
                 <a
-                  href={project.project_url}
+                  href={project.projectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 underline hover:text-blue-800"
