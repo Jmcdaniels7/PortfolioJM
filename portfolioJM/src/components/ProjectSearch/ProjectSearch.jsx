@@ -64,7 +64,7 @@ const ProjectSearch = () => {
             </p>
             
             <a
-              href={project.projectUrl}
+              href={project.projectURL}
               target="_blank"
               rel="noopener noreferrer"
               className="project-link"
