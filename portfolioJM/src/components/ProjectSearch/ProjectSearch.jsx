@@ -58,9 +58,9 @@ const ProjectSearch = () => {
               <p className="text-sm text-gray-700 mb-2">
                 Framework: {project.project_framework || 'Unknown'}
               </p>
-              {project.projecturl && (
+              {project.project_url && (
                 <a
-                  href={project.projecturl}
+                  href={project.project_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 underline hover:text-blue-800"
