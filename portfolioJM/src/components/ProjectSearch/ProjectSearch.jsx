@@ -59,16 +59,18 @@ const ProjectSearch = () => {
               <p className="text-sm text-gray-700 mb-2">
                 Framework: {project.projectFramework || 'Unknown'}
               </p>
-              {project.projectUrl && (
-                <a
+              <p className="text-sm text-gray-700 mb-2">
+                Languages: {project.projectLanguages || 'Unknown'}
+              </p>
+              <a
                   href={project.projectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 underline hover:text-blue-800"
-                >
-                  View Project
-                </a>
-              )}
+              >
+                View Project
+              </a>
+              
             </div>
           ))}
         </div>
