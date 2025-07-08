@@ -7,7 +7,7 @@ const ProjectSearch = () => {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    fetch('https://java-app-blqt.onrender.com/project/search')
+    fetch('https://java-app-blqt.onrender.com/api/project/search?search=' + encodeURIComponent(search))
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
