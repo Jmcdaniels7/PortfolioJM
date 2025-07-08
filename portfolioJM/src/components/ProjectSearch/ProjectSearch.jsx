@@ -60,10 +60,10 @@ const ProjectSearch = () => {
                 Framework: {project.projectFramework || 'Unknown'}
               </p>
               <p className="text-sm text-gray-700 mb-2">
-                Languages: {project.projectLanguages || 'Unknown'}
+                Languages: {Array.isArray(project.projectLanguages) ? project.projectLanguages.join(', ') : (project.projectLanguages || 'Unknown')}
               </p>
               <a
-                  href={project.projectUrl}
+                  href={project.projectURL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 underline hover:text-blue-800"
