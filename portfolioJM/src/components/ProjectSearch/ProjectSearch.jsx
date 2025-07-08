@@ -23,10 +23,11 @@ const ProjectSearch = () => {
 
   const handleSearch = () => {
     const lower = search.toLowerCase();
-    const result = data.filter((project) =>
-      project.project_name.toLowerCase().includes(lower) ||
-      project.project_framework.toLowerCase().includes(lower)
-    );
+    const result = data.filter((project) => {
+      const name = project.project_name?.toLowerCase() || '';
+      const framework = project.project_framework?.toLowerCase() || '';
+      return name.includes(lower) || framework.includes(lower);
+    });
     setFiltered(result);
   };
 
