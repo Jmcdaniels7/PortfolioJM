@@ -15,6 +15,7 @@ const ProjectSearch = () => {
         return response.json();
       })
       .then((json) => {
+        console.log("Projects from API:", json);
         setFiltered(json);
         setError(null);
       })
