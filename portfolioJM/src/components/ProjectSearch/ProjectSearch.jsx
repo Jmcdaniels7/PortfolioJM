@@ -7,8 +7,10 @@ const ProjectSearch = () => {
   const [error, setError] = useState(null);
 
   const handleSearch = () => {
-    if (!search.trim()) return; // Prevent empty search calls
+    // Prevent empty search calls
+    if (!search.trim()) return; 
 
+    //fetching api endpoint from render deployment with error handling
     fetch(`https://java-app-blqt.onrender.com/api/project/search?search=${encodeURIComponent(search)}`)
       .then((response) => {
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
@@ -47,7 +49,7 @@ const ProjectSearch = () => {
             Search
           </button>
         </div>
-      </div>
+      
 
       {error && <p className="text-red-600 mt-4">{error}</p>}
 
@@ -75,6 +77,7 @@ const ProjectSearch = () => {
           ))}
         </div>
       )}
+    </div>
     </div>
   );
 };
