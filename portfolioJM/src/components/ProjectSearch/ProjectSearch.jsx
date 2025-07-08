@@ -1,34 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './ProjectSearch.css';
 
 const ProjectSearch = () => {
-  const [data, setData] = useState([]);
-  const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState('');
+  const [filtered, setFiltered] = useState([]);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch('https://java-app-blqt.onrender.com/api/project/search?search=' + encodeURIComponent(search))
+  const handleSearch = () => {
+    if (!search.trim()) return; // Prevent empty search calls
+
+    fetch(`https://java-app-blqt.onrender.com/api/project/search?search=${encodeURIComponent(search)}`)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
         return response.json();
       })
       .then((json) => {
-        setData(json);
-        setFiltered(json); // Show all initially
+        setFiltered(json);
+        setError(null);
       })
-      .catch((error) => console.error("Failed to load projects from API:", error));
-  }, []);
-
-  const handleSearch = () => {
-    const lower = search.toLowerCase();
-    const result = data.filter((project) => {
-      const name = project.project_name?.toLowerCase() || '';
-      const framework = project.project_framework?.toLowerCase() || '';
-      return name.includes(lower) || framework.includes(lower);
-    });
-    setFiltered(result);
+      .catch((err) => {
+        console.error('Search failed:', err);
+        setError('Failed to load projects. Please try again.');
+        setFiltered([]);
+      });
   };
 
   return (
@@ -54,30 +48,36 @@ const ProjectSearch = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((project) => (
-          <div key={project.project_id} className="project-card">
-            <h2 className="text-lg font-semibold mb-1">{project.project_name}</h2>
-            <p className="text-sm text-gray-700 mb-2">
-              Framework: {project.project_framework}
-            </p>
-            <a
-              href={project.projecturl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800"
-            >
-              View Project
-            </a>
-          </div>
-          
-        ))}
-      </div>
+      {error && <p className="text-red-600 mt-4">{error}</p>}
+
+      {filtered.length > 0 && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {filtered.map((project) => (
+            <div key={project.project_id} className="project-card">
+              <h2 className="text-lg font-semibold mb-1">{project.project_name || 'Unnamed Project'}</h2>
+              <p className="text-sm text-gray-700 mb-2">
+                Framework: {project.project_framework || 'Unknown'}
+              </p>
+              {project.projecturl && (
+                <a
+                  href={project.projecturl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline hover:text-blue-800"
+                >
+                  View Project
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
 
 export default ProjectSearch;
+
 
 
 
