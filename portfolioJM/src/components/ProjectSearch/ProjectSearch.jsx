@@ -27,7 +27,7 @@ const ProjectSearch = () => {
   };
 
   return (
-  <div className="project-search-container">
+  
     <div className="search-container">
       <h1 className="search-header">Project Search</h1>
 
@@ -76,7 +76,6 @@ const ProjectSearch = () => {
         ))}
       </div>
     </div>
-  </div>
 );
 
 };
