@@ -39,7 +39,7 @@ const ProjectSearch = () => {
           onKeyDown={(e) => {
             if (e.key === 'Enter') handleSearch();
           }}
-          placeholder="Search by name or framework"
+          placeholder="Search by language or framework"
           className="search-input"
         />
 
