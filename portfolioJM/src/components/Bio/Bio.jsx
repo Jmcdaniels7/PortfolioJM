@@ -32,9 +32,9 @@ const Bio = () => {
                 <div className="skills">
                     <h2>Skills</h2>
                     <h4>Languages: Python, Java, C++, SQL, TypeScript, JavaScript, HTML5, CSS</h4>
-                    <h4>Frameworks/Libraries: Django, Flask, Node.js, React, Angular, Spring Boot, Javalin, pandas</h4>
+                    <h4>Frameworks/Libraries: Django, Flask, Node.js, React, Angular, Spring Boot, Javalin, Pandas</h4>
                     <h4>Databases: PostgreSQL, SQLite, CosmosDB, Oracle</h4>
-                    <h4>Tools: Microsoft Azure, AWS, Postman, Docker, Anaconda, GitHub Copilot</h4>
+                    <h4>Tools: Microsoft Azure, AWS, Render, Postman, Docker, Anaconda, GitHub Copilot</h4>
                 </div>
                 
                 
