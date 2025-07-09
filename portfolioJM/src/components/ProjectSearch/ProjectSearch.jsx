@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './ProjectSearch.css';
 
+//next step is to start to gather data on searching and then do data analytics on most frequent searches
+
 const ProjectSearch = () => {
   const [search, setSearch] = useState('');
   const [filtered, setFiltered] = useState([]);
