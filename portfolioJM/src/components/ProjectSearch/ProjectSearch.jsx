@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+const [loading, setLoading] = useState(false);
 import './ProjectSearch.css';
 
 //next step is to start to gather data on searching and then do data analytics on most frequent searches
@@ -9,24 +10,30 @@ const ProjectSearch = () => {
   const [error, setError] = useState(null);
 
   const handleSearch = () => {
-    if (!search.trim()) return;
+  if (!search.trim()) return;
 
-    fetch(`https://java-app-blqt.onrender.com/api/project/search?search=${encodeURIComponent(search)}`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-        return response.json();
-      })
-      .then((json) => {
-        console.log('Projects from API:', json);
-        setFiltered(json);
-        setError(null);
-      })
-      .catch((err) => {
-        console.error('Search failed:', err);
-        setError('Failed to load projects. Please try again.');
-        setFiltered([]);
-      });
-  };
+  setLoading(true); // Start spinner
+
+  fetch(`https://java-app-blqt.onrender.com/api/project/search?search=${encodeURIComponent(search)}`)
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+      return response.json();
+    })
+    .then((json) => {
+      console.log('Projects from API:', json);
+      setFiltered(json);
+      setError(null);
+    })
+    .catch((err) => {
+      console.error('Search failed:', err);
+      setError('Failed to load projects. Please try again.');
+      setFiltered([]);
+    })
+    .finally(() => {
+      setLoading(false); // Stop spinner
+    });
+};
+
 
   return (
   <div className="project-search-container">
@@ -52,6 +59,13 @@ const ProjectSearch = () => {
 
       {error && <p className="error-text">{error}</p>}
 
+      {loading && (
+        <div className="loader-container">
+          <div className="loader" />
+          <p>Loading projects...</p>
+        </div>
+      )}
+
       <div className="project-grid">
         {filtered.map((project) => (
           <div key={project.projectId} className="project-card">
@@ -64,7 +78,7 @@ const ProjectSearch = () => {
                 ? project.projectLanguages.join(', ')
                 : project.projectLanguages || 'Unknown'}
             </p>
-            
+
             <a
               href={project.projectURL}
               target="_blank"
@@ -73,13 +87,13 @@ const ProjectSearch = () => {
             >
               View Project
             </a>
-
           </div>
         ))}
       </div>
     </div>
   </div>
 );
+
 
 };
 
