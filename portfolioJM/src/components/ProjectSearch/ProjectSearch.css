@@ -153,6 +153,20 @@
   margin: 0 auto 0.5rem;
 }
 
+.flipping-message {
+  animation: fadeIn 0.5s ease-in-out;
+  color: #f0f0f0;
+  margin-top: 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
